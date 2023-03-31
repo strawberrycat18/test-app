@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Container, Image, Nav, Navbar, Row } from "react-bootstrap";
+import { Container, Image, Nav, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
@@ -43,7 +43,7 @@ export default function PostPageHome() {
 }
 
 function ImageSquare({ post }) {
-  const { caption, image, id } = post;
+  const { image, id } = post;
   return (
     <>
     <Link
