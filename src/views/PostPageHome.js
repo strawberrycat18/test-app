@@ -63,10 +63,16 @@ function ImageSquare({ post }) {
         }}
       />
     </Link>
-    <text>{caption}</text>
-    <Button href={`/update/${id}`} style={{objectFit:"cover", width:"18rem", height:"2rem"}}>
-            Edit
-    </Button>
+    {/* <text>{caption}</text> */}
+    {/* <Button href={`/update/${id}`} 
+        style={{
+          objectFit: "cover",
+          width:"18rem",
+          height:"2rem",
+          marginTop:"1rem",
+          marginBottom:"2rem"}}>
+        Edit
+    </Button> */}
     </>
   );
 }
