@@ -6,8 +6,11 @@ import PostPageDetails from './views/PostPageDetails';
 import PostPageHome from './views/PostPageHome';
 import PostPageUpdate from './views/PostPageUpdate';
 import SignUpPage from './views/SignUpPage';
+import PageNotFound from './views/PageNotFound';
+import PostNotFound from './views/PostNotFound';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -15,6 +18,8 @@ function App() {
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/add" element={<PostPageAdd/>}/>
+          <Route path="*" element={<PageNotFound/>}/>
+          <Route path="/postnotfound" element={<PostNotFound/>}/>
           <Route path="/post/:id" element={<PostPageDetails/>}/>
           <Route path="/update/:id" element={<PostPageUpdate/>}/>
 

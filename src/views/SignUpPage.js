@@ -1,16 +1,22 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 
 export default function SignUpPage() {
+  const [user] = useAuthState(auth);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!user) navigate("/");
+  }, [user]);
+    
   return (
     <Container>
       <h1 className="my-3">Sign up for an account</h1>
