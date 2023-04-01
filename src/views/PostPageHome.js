@@ -13,13 +13,16 @@ export default function PostPageHome() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-
    async function getAllPosts() {
-    const query = await getDocs(collection(db, "posts"));
-    const posts = query.docs.map((doc) => {
-      return { id: doc.id, ...doc.data()};
-    });
-    setPosts(posts);
+      try {    
+      const query = await getDocs(collection(db, "posts"));
+      const posts = query.docs.map((doc) => {
+        return { id: doc.id, ...doc.data()};
+      });
+      setPosts(posts);
+    } catch {
+      navigate("/postnotfound");
+    };
   }
 
   useEffect(() => {
@@ -43,6 +46,7 @@ export default function PostPageHome() {
           </Nav>
         </Container>
       </Navbar>
+      <Container>Welcome to Tinkergram , {user.email}!</Container>
       <Container>
         <Row>
           <ImagesRow />

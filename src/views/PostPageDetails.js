@@ -16,8 +16,12 @@ export default function PostPageDetails() {
   const navigate = useNavigate();
 
   async function deletePost(id) {
+    try {
     await deleteDoc(doc(db, "posts", id));
     navigate("/");
+    } catch {
+      navigate("/postnotfound");
+    };
   }
 
   async function getPost(id) {
