@@ -27,15 +27,20 @@ export default function PostPageDetails() {
   async function getPost(id) {
     console.log(id)
     try{
-          const postDocument = await getDoc(doc(db, "posts", id));
+          const postDocument = await getDoc(doc(db, "posts",id));
           const post = postDocument.data();
           setCaption(post.caption);
           setImage(post.image);
+          // setPostComments()
           setUsername(post.username);
         } catch {
             navigate("/postnotfound");
             };
     }
+    // const postComments = db.collectionGroup('comments').where('username',"==","...").get();
+    // const comments = postComments.data();
+    // console.log(comments)
+
 
   useEffect(() => {
     console.log(user)

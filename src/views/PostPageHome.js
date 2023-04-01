@@ -34,7 +34,7 @@ export default function PostPageHome() {
   const ImagesRow = () => {
     return posts.map((post, index) => <ImageSquare key={index} post={post} />);
   };
-
+console.log(user)
   return (
     <>
       <Navbar variant="light" bg="light">
@@ -46,7 +46,7 @@ export default function PostPageHome() {
           </Nav>
         </Container>
       </Navbar>
-      <Container>Welcome to Tinkergram , {user.email}!</Container>
+      <Container>Welcome to Tinkergram , {user?.email}!</Container>
       <Container>
         <Row>
           <ImagesRow />
