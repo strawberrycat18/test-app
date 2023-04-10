@@ -56,7 +56,7 @@ export default function LoginPage() {
                             setError(error.message);    
                         }
                 }}>
-              Login
+              Login to the Application!
             </Button>
           </Form>
           <p>{error}</p>
